@@ -29,13 +29,15 @@ public class HuffmanTree {
             if (node2 != null) {
                 merged = new HuffmanNode(
                         null,
-                        node1.frequency + node2.frequency
+                        node1.frequency + node2.frequency,
+                        node1,
+                        node2
                 );
             }
             heap.add(merged);
         }
 
-        return heap.peek();
+        return heap.poll();
     }
 }
 
