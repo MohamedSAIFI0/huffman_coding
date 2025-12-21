@@ -1,15 +1,20 @@
 package com;
 
-public class HuffmanNode {
-    char character;
+public class HuffmanNode implements Comparable<HuffmanNode>{
+    Character character;
     int frequency;
     HuffmanNode left;
     HuffmanNode right;
 
-    public HuffmanNode(char character, int frequency) {
+    public HuffmanNode(Character character, int frequency) {
         this.character = character;
         this.frequency = frequency;
         this.left = null;
         this.right = null;
+    }
+
+    @Override
+    public int compareTo(HuffmanNode other) {
+        return this.frequency - other.frequency;
     }
 }
