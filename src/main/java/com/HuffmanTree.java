@@ -5,7 +5,7 @@ import java.util.PriorityQueue;
 
 public class HuffmanTree {
 
-    private  HuffmanNode root;
+    private  final HuffmanNode root;
 
     public HuffmanTree(Map<Character, Integer> freqDict) {
         this.root = buildHuffmanTree(freqDict);
