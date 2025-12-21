@@ -50,7 +50,7 @@ public class HuffmanTree {
         * On récupère le deuxième noeud avec la plus petite fréquence.
         * On crée un nouveau noeud ayant comme fréquence la somme des noeuds minimaux.
         * Les noeuds minimaux récupérés deviennent des fils de ce nouveau noeud.
-        * On insère ce nouveau dans le heap.
+        * On insère ce nouveau noeud dans le heap.
         * On répète le processus jusqu'à ce que le heap soit vide.
         */
         while (heap.size() > 1) {
@@ -73,5 +73,25 @@ public class HuffmanTree {
         */
         return heap.poll();
     }
+
+    public void printTree() {
+        printTreeRecursive(root, "");
+    }
+
+    private void printTreeRecursive(HuffmanNode node, String indent) {
+        if (node == null) {
+            return;
+        }
+
+        if (node.character != null) {
+            System.out.println(indent + "└── '" + node.character + "' (" + node.frequency + ")");
+        } else {
+            System.out.println(indent + "└── * (" + node.frequency + ")");
+        }
+
+        printTreeRecursive(node.left, indent + "   ");
+        printTreeRecursive(node.right, indent + "   ");
+    }
+
 }
 

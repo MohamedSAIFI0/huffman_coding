@@ -1,17 +1,24 @@
 package com;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 
 public class FileUtils {
 
-    public static String readFile(String filePath) throws IOException {
+    public static String readFile(String resourcePath) throws IOException {
+        InputStream is = FileUtils.class
+                .getClassLoader()
+                .getResourceAsStream(resourcePath);
+
+        if (is == null) {
+            throw new IOException("Fichier introuvable dans resources : " + resourcePath);
+        }
+
         StringBuilder content = new StringBuilder();
 
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+        try (BufferedReader br =
+                     new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8))) {
+
             String line;
             while ((line = br.readLine()) != null) {
                 content.append(line).append(System.lineSeparator());
