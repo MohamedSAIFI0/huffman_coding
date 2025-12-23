@@ -84,13 +84,22 @@ public class HuffmanTree {
         }
 
         if (node.character != null) {
-            System.out.println(indent + "└── '" + node.character + "' (" + node.frequency + ")");
+            System.out.println(indent + "└── " + displayChar(node.character)
+                    + " (" + node.frequency + ")");
         } else {
             System.out.println(indent + "└── * (" + node.frequency + ")");
         }
 
         printTreeRecursive(node.left, indent + "   ");
         printTreeRecursive(node.right, indent + "   ");
+    }
+    // Ici \n et \r car Windows newline \r\n
+    private String displayChar(Character c) {
+        if (c == null) return "*";
+        if (c == '\n') return "\\n";
+        if (c == '\r') return "\\r";
+        if (c == ' ') return "' '";
+        return "'" + c + "'";
     }
 
 }
