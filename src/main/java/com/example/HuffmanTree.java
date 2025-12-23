@@ -82,7 +82,6 @@ public class HuffmanTree {
         if (node == null) {
             return;
         }
-
         if (node.character != null) {
             System.out.println(indent + "└── " + displayChar(node.character)
                     + " (" + node.frequency + ")");
@@ -100,6 +99,24 @@ public class HuffmanTree {
         if (c == '\r') return "\\r";
         if (c == ' ') return "' '";
         return "'" + c + "'";
+    }
+
+    public void printTreeHorizontal(HuffmanNode node) {
+        printTreeHorizontal(node, 0);
+    }
+    private void printTreeHorizontal(HuffmanNode node, int depth) {
+        if (node == null) return;
+        // print right first
+        printTreeHorizontal(node.right, depth + 1);
+        // indent
+        System.out.println("    ".repeat(depth) +
+                (node.character != null
+                        ? displayChar(node.character)
+                        : "*") +
+                " (" + node.frequency + ")"
+        );
+        // print left
+        printTreeHorizontal(node.left, depth + 1);
     }
 
 }

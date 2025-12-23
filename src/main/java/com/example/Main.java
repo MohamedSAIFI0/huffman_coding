@@ -10,5 +10,7 @@ public class Main {
         HuffmanTree huffmanTree = new HuffmanTree(frequencies);
         System.out.println("===== Arbre de Huffman =====");
         huffmanTree.printTree();
+        System.out.println("***************************************");
+        huffmanTree.printTreeHorizontal(huffmanTree.getRoot());
     }
 }
