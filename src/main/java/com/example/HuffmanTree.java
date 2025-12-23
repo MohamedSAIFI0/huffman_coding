@@ -1,10 +1,4 @@
-<<<<<<< HEAD:src/main/java/com/example/HuffmanTree.java
 package com.example;
-
-public class HuffmanTree {
-}
-=======
-package com;
 
 import java.util.Map;
 import java.util.PriorityQueue;
@@ -100,5 +94,3 @@ public class HuffmanTree {
     }
 
 }
-
->>>>>>> origin/lyrach_branch:src/main/java/com/HuffmanTree.java

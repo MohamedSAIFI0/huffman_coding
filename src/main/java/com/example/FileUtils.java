@@ -1,12 +1,4 @@
-<<<<<<< HEAD:src/main/java/com/example/FileUtils.java
 package com.example;
-
-public class FileUtils {
-
-
-}
-=======
-package com;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -42,4 +34,3 @@ public class FileUtils {
         }
     }
 }
->>>>>>> origin/lyrach_branch:src/main/java/com/FileUtils.java

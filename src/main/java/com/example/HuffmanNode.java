@@ -1,10 +1,4 @@
-<<<<<<< HEAD:src/main/java/com/example/HuffmanNode.java
 package com.example;
-
-public class HuffmanNode {
-}
-=======
-package com;
 
 public class HuffmanNode implements Comparable<HuffmanNode>{
     Character character;
@@ -31,4 +25,3 @@ public class HuffmanNode implements Comparable<HuffmanNode>{
         return this.frequency - other.frequency;
     }
 }
->>>>>>> origin/lyrach_branch:src/main/java/com/HuffmanNode.java

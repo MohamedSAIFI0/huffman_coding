@@ -1,10 +1,4 @@
-<<<<<<< HEAD:src/main/java/com/example/FrequencyAnalyzer.java
 package com.example;
-
-public class FrequencyAnalyzer {
-}
-=======
-package com;
 import java.util.Map;
 import java.util.HashMap;
 
@@ -20,4 +14,3 @@ public class FrequencyAnalyzer {
         return frequencies;
     }
 }
->>>>>>> origin/lyrach_branch:src/main/java/com/FrequencyAnalyzer.java
