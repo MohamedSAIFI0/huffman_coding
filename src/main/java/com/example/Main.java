@@ -44,5 +44,21 @@ public class Main {
                 Encoder.encode(text,asciiCodes);
         System.out.println("===== Encoded binary string =====");
         System.out.println(encoded);
+        System.out.println("**********************  Decoded text  *************************");
+        String decoded  = Decoder.decode(encoded,huffmanTree.getRoot());
+        System.out.println(decoded);
+        System.out.println("*****************************************************************");
+        System.out.println("********************** Compression Statistics ****************");
+        int originalBits = CompressionUtils.originalSizeBits(text);
+        int compressedBits = CompressionUtils.compressedSizeBits(encoded);
+        double ratio = CompressionUtils.compressionRatio(text, encoded);
+        double gain = CompressionUtils.compressionGain(text, encoded);
+        System.out.println("Original size   : " + originalBits + " bits");
+        System.out.println("Compressed size : " + compressedBits + " bits");
+        System.out.println("Compression ratio: " + String.format("%.3f", ratio));
+        System.out.println("Compression gain : " + String.format("%.3f", gain));
+        System.out.println("*****************************************************************");
+        System.out.println("**********************  Validation Final  *************************");
+        System.out.println("Decoding correct ? " + text.equals(decoded));
     }
 }
