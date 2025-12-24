@@ -60,5 +60,9 @@ public class Main {
         System.out.println("*****************************************************************");
         System.out.println("**********************  Validation Final  *************************");
         System.out.println("Decoding correct ? " + text.equals(decoded));
+
+        // Export Graphviz :
+        HuffmanGraphvizExporter.exportToDot(huffmanTree.getRoot(), "huffman_tree.dot");
+
     }
 }

@@ -140,6 +140,9 @@ The project generates a `huffman_tree.dot` file that can be visualized using Gra
 dot -Tpng huffman_tree.dot -o huffman_tree.png
 ```
 
+So the image for our example.txt will lokk like : 
+<img width="1404" height="940" alt="huffman_tree" src="https://github.com/user-attachments/assets/9a173426-19fe-4d82-a89a-869c56b6e684" />
+
 This creates a visual representation of the Huffman tree showing character frequencies and code assignments.
 
 ## Compression Performance
@@ -167,4 +170,3 @@ To extend this project:
 ## License
 
 This project is for educational purposes. Feel free to use and modify the code for learning Huffman coding concepts.</content>
-<filePath="c:\Users\Jetkey--pc\Downloads\S3\DS\End-project\huffman_coding\README.md
