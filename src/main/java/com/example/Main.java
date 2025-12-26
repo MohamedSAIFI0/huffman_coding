@@ -38,10 +38,7 @@ public class Main {
             else{System.out.print(character+"=>"+string+"\t");}
         });
         System.out.println("\n***************************************");
-        String[] asciiCodes =
-                HuffmanCodeGenerator.toAsciiArray(codes);
-        String encoded =
-                Encoder.encode(text,asciiCodes);
+        String encoded = Encoder.encode(text, codes);
         System.out.println("===== Encoded binary string =====");
         System.out.println(encoded);
         System.out.println("**********************  Decoded text  *************************");

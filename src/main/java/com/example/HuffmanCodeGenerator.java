@@ -42,17 +42,4 @@ public class HuffmanCodeGenerator {
         }
     }
 
-    /**
-     * Optimisation : conversion du dictionnaire en tableau ASCII de 256 entrées.
-     */
-    public static String[] toAsciiArray(Map<Character, String> codesMap) {
-        String[] asciiCodes = new String[256];
-        for (Map.Entry<Character, String> entry : codesMap.entrySet()) {
-            char c = entry.getKey();
-            if (c < 256) {
-                asciiCodes[c] = entry.getValue();
-            }
-        }
-        return asciiCodes;
-    }
 }

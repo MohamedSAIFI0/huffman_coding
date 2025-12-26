@@ -1,23 +1,18 @@
 package com.example;
+import java.util.Map;
 
 public class Encoder {
-
-    /**
-     * Encode un texte en utilisant le tableau ASCII optimisé.
-     *
-     */
-    public static String encode(String text, String[] asciiArray) {
-        if (text == null || asciiArray == null) return "";
+    public static String encode(String text, Map<Character, String> codes) {
+        if (text == null || codes == null) return "";
 
         StringBuilder encoded = new StringBuilder();
 
         for (char c : text.toCharArray()) {
-            // Vérifie que le caractère est dans la plage ASCII
-            if (c < 256 && asciiArray[c] != null) {
-                encoded.append(asciiArray[c]);
+            String code = codes.get(c);
+            if (code != null) {
+                encoded.append(code);
             } else {
-                // Optionnel : gérer les caractères non-ASCII
-                System.err.println("Caractère non supporté : " + c);
+                System.err.println("Avertissement : Aucun code Huffman trouvé pour le caractère : '" + c + "' (code Unicode: " + (int)c + ")");
             }
         }
 

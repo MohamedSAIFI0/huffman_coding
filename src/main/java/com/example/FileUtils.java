@@ -28,8 +28,10 @@ public class FileUtils {
         return content.toString();
     }
 
+
     public static void writeFile(String filePath, String content) throws IOException {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath))) {
+        try (BufferedWriter bw = new BufferedWriter(
+                new OutputStreamWriter(new FileOutputStream(filePath), StandardCharsets.UTF_8))) {
             bw.write(content);
         }
     }
