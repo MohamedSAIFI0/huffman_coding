@@ -47,9 +47,13 @@ public class HuffmanGraphvizExporter {
 
     private static String displayChar(Character c) {
         if (c == null) return "*";
-        if (c == '\n') return "\\n";
-        if (c == '\r') return "\\r";
-        if (c == ' ') return "' '";
-        return "'" + c + "'";
+        switch (c) {
+            case '\n': return "\\\\n";  // DOT literal
+            case '\r': return "\\\\r";
+            case '\t': return "\\\\t";
+            case ' ':  return "' '";
+            case '"':  return "\\\"";
+            default:   return "'" + c + "'";
+        }
     }
 }
